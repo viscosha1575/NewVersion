@@ -4,47 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity Web Player | Flappy Bird</title>
-    <style>
-      /* Стили для анимации загрузки */
-      #loading-screen {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-      }
-
-      /* Пример CSS-анимации */
-      .loader {
-        border: 16px solid #f3f3f3;
-        border-top: 16px solid #3498db;
-        border-radius: 50%;
-        width: 120px;
-        height: 120px;
-        animation: spin 2s linear infinite;
-      }
-
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-    </style>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <!-- Анимация загрузки -->
-    <div id="loading-screen">
-      <div class="loader"></div>
-    </div>
-
-    <!-- Canvas для Unity -->
-    <canvas id="unity-canvas" width=1280 height=720 tabindex="-1" style="width: 1280px; height: 720px; background: url('Build/NewVersion.jpg') center / cover"></canvas>
+    <canvas id="unity-canvas" width=1280 height=720 tabindex="-1" style="width: 1280px; height: 720px; background: url('Build/yyyyy.jpg') center / cover"></canvas>
     <script src="Build/yyyyy.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Стиль для мобильных устройств
+        // Mobile device style: fill the whole browser client area with the game canvas:
         var meta = document.createElement('meta');
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
@@ -58,20 +24,17 @@
         document.body.style.textAlign = "left";
       }
 
-      // Создание экземпляра Unity
       createUnityInstance(document.querySelector("#unity-canvas"), {
         arguments: [],
-        dataUrl: "Build/NewVersion.data",
-        frameworkUrl: "Build/NewVersion.framework.js",
-        codeUrl: "Build/NewVersion.wasm",
+        dataUrl: "Build/yyyyy.data",
+        frameworkUrl: "Build/yyyyy.framework.js",
+        codeUrl: "Build/yyyyy.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Zigurous",
         productName: "Flappy Bird",
         productVersion: "0.1",
-      }).then(function(unityInstance) {
-        // Когда Unity загружается, скрываем экран загрузки
-        var loadingScreen = document.getElementById('loading-screen');
-        loadingScreen.style.display = 'none';
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
     </script>
   </body>
